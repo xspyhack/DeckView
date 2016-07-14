@@ -115,10 +115,12 @@ public class DeckView: UIView {
         
         guard let cardViewType = cardViewType else {
             assert(false, "Must register cardView type with register(type:)")
+            return CardView()
         }
         
         guard let cardView = (cardViewType as? CardView.Type)?.init() else {
             assert(false, "Can't initialize form type \(cardViewType)")
+            return CardView()
         }
         
         addSubview(cardView)
@@ -216,6 +218,7 @@ public class DeckView: UIView {
         
         guard index < dataSource?.numberOfCardInDeckView(self) ?? 0 else {
             assert(false, "** deckView.dequeue(for:) **: overlay at index \(index)")
+            return CardView()
         }
 
         if (0..<visibleQueue.count).contains(index) {

@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target   = "8.0"
 
   s.source          = { :git => "https://github.com/xspyhack/DeckView.git", :tag => s.version }
-  s.source_files    = "FlashPicker/*.swift"
+  s.source_files    = "DeckView/*.swift"
   s.requires_arc    = true
 
 end
