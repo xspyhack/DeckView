@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQk-no-qDy">
+                                <rect key="frame" x="210" y="481" width="50" height="30"/>
+                                <state key="normal" title="Shuffle"/>
+                                <connections>
+                                    <action selector="shuffleAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JKc-jb-9jT"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Zv-Z9-PQ6" customClass="DeckView" customModule="DeckView">
+                                <rect key="frame" x="210" y="180" width="180" height="240"/>
+                                <color key="backgroundColor" red="0.1058823529" green="0.73333333329999995" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="RiR-qO-6lV"/>
+                                    <constraint firstAttribute="width" constant="180" id="bpS-WH-UYM"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFK-2n-uHZ">
+                                <rect key="frame" x="315" y="481" width="75" height="30"/>
+                                <state key="normal" title="New Game"/>
+                                <connections>
+                                    <action selector="restartAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Tw-EM-tGx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mFK-2n-uHZ" firstAttribute="centerY" secondItem="bQk-no-qDy" secondAttribute="centerY" id="3Dx-Gf-P7b"/>
+                            <constraint firstItem="bQk-no-qDy" firstAttribute="leading" secondItem="2Zv-Z9-PQ6" secondAttribute="leading" id="FYy-SW-QyE"/>
+                            <constraint firstItem="2Zv-Z9-PQ6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="J4m-Oj-RJ6"/>
+                            <constraint firstItem="bQk-no-qDy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WMi-Cl-dtW"/>
+                            <constraint firstItem="bQk-no-qDy" firstAttribute="top" secondItem="2Zv-Z9-PQ6" secondAttribute="bottom" constant="61" id="a6F-Aj-zOW"/>
+                            <constraint firstItem="2Zv-Z9-PQ6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dgL-5f-oss"/>
+                            <constraint firstItem="mFK-2n-uHZ" firstAttribute="trailing" secondItem="2Zv-Z9-PQ6" secondAttribute="trailing" id="sUr-2f-CVe"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="WMi-Cl-dtW"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="deckView" destination="2Zv-Z9-PQ6" id="eoW-LH-EuT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
